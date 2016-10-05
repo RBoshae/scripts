@@ -10,12 +10,12 @@ echo "#define "$1"__hh" >> $1.hh
 
 echo "\nclass $1\n" >> $1.hh
 echo "{\n" >> $1.hh
-echo "\tpublic:\n\t$1 ();\n\t ~MyClass();\n\n\tprivate:\n};\n#endif" >> $1.hh
+echo "\tpublic:\n\t$1 ();\n\t ~$1();\n\n\tprivate:\n};\n#endif" >> $1.hh
 
 #end of adding content to .hh file
 
 
 #add content to .cc file
-echo "#include \"./MyClass.hh\"" >> $1.cc
-echo "\nMyClass::MyClass()\n{}\n\nMyClass::~MyClass()\n{}" >> $1.cc
+echo "#include \"./$1.hh\"" >> $1.cc
+echo "\n$1::$1()\n{}\n\n$1::~$1()\n{}" >> $1.cc
 #end of adding content to .cc file
