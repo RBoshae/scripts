@@ -1,0 +1,9 @@
+#!/bin/sh
+
+FILE=main.cc
+
+touch $FILE
+
+echo "int main (int argc, const char** argv) {" >> $FILE
+echo "  // TODO Stub" >> $FILE
+echo "}" >> $FILE
