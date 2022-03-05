@@ -1,0 +1,6 @@
+#!/bin/sh
+
+CLASSNAME=$1
+
+create-hh $CLASSNAME
+create-cc $CLASSNAME

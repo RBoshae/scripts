@@ -1,0 +1,18 @@
+#!/bin/sh
+
+CLASSNAME=$1
+FILE=$CLASSNAME.cc
+HEADERFILE=$CLASSNAME.hh
+
+touch $FILE
+
+# Add content to .cc file
+echo "#include \"$HEADERFILE\"" >> $FILE
+echo "" >> $FILE
+echo "$CLASSNAME::$CLASSNAME() {" >> $FILE
+echo " // TODO Stub" >> $FILE
+echo "}" >> $FILE
+echo "" >> $FILE
+echo "$CLASSNAME::~$CLASSNAME() {" >> $FILE
+echo "  // TODO Stub" >> $FILE
+echo "}" >> $FILE

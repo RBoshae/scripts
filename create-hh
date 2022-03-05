@@ -1,0 +1,18 @@
+#!/bin/sh
+
+CLASSNAME=$1
+FILE=$CLASSNAME.hh
+
+touch $FILE
+
+# Add content to .hh file
+echo "#pragma once" >> $FILE
+echo "" >> $FILE
+echo "class $CLASSNAME {" >> $FILE
+echo " public:" >> $FILE
+echo "  $CLASSNAME();" >> $FILE
+echo "  ~$CLASSNAME();" >> $FILE
+echo "" >> $FILE
+echo " private:" >> $FILE
+echo "" >> $FILE
+echo "};" >> $FILE
