@@ -2,7 +2,7 @@
 
 A collection of bash scripts intended to make shell life easier.
 
-## Adding scripts to your $PATH
+## Adding Scripts to $PATH
 
 To temporarily add scripts to your active session
 
