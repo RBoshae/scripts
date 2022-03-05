@@ -1,0 +1,62 @@
+#!/bin/bash
+
+# ======================================================================
+# Filename: create-main
+# ======================================================================
+# Author:	Rick Boshae
+# Created On:	2022-03-05
+# ----------------------------------------------------------------------
+# Description:	
+# 		create-main is a template used to create a cc file with
+#	an empty main function. The script allows the user to specify a cc 
+#	file's Name, Topic, and Reference respectively. A .cc extension is
+#	appended to the file name. In other words, do not include the .cc 
+#	extension when nameing a file. If a Topic is more than one word long 
+#	you must wrap the topic in quotes (ex. "My Long Topic"). Similarly 
+# 	if a Reference is longer than one word the reference must also be 
+#	wrapped in quotes.
+# 				
+
+# Arguments
+FILENAME="$1"
+AUTHOR="Rick Boshae"
+DATE=$(date +%Y-%m-%d)
+REFERENCE="$2"
+
+# Validate user arguments.
+if [ $FILENAME = "" ]
+then
+	echo "Error. Expected a file name."
+	exit
+fi
+
+if [ $REFERENCE = "P" ]
+then
+	REFERENCE="Professional C++ 3rd Edition by Marc Gregoire"
+elif [ $REFERENCE = "" ]
+then
+	REFERENCE="N/A"
+fi
+
+# Create text file.
+touch $FILENAME.cc
+
+# Fill text file with template info.
+cat <<EOT >> $FILENAME.cc
+/*=====================================================================*
+ * $FILENAME.cc                                                       *
+ *=====================================================================*
+ * Author:		$AUTHOR                                                *
+ * Created On:	$DATE                                                  *
+ * Reference:	$REFERENCE                                             *
+ *---------------------------------------------------------------------*
+ * Code Description:	                                               *
+ *	Insert Description                                                 *
+ *=====================================================================*/
+
+int main(int argc, char* argv[]) {
+  // Insert code here.
+
+  return 0;
+}
+EOT
